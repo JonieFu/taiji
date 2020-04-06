@@ -1,8 +1,17 @@
 window.addEventListener("load", function () {
-    let str = `/* 你好
- * 今天展示一下所学的JS和CS的功底
- * 以下是个太极 
- * 首先画一个圆，一半黑一半白 */
+    let str = `/* 大家好
+ * 今天展示一下所学的JS和CSS的功底
+ * 以下是个太极
+ * 首先设定动画 */
+@keyframes bagua {
+     from{
+         transform: rotate(0deg);
+     }
+     to{
+         transform: rotate(360deg);
+     }
+ } 
+ /* 首先画一个圆，一半黑一半白 */
 #box {
   border: 1px solid red;
   width: 200px;
@@ -12,6 +21,7 @@ window.addEventListener("load", function () {
   box-shadow: -2px -2px 5px 0px rgba(0,0,0,0.75);
   border: none;
 }
+
 /* 画阴阳鱼,一黑一白 */
 #box::before {
   content: "";
@@ -42,14 +52,6 @@ window.addEventListener("load", function () {
   border:none;
 }
 /* 让八卦图转起来 */
-@keyframes bagua {
-     from{
-         transform: rotate(0deg);
-     }
-     to{
-         transform: rotate(360deg);
-     }
- }
  #box {
      animation: bagua  5s linear infinite;
  }

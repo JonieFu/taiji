@@ -33,14 +33,16 @@
      }
      #wrapper{
          
-         position: relative;
+         /* position: relative; */
+         position:fixed;
+         left: 20%;
          height: 50vh;
      }
      #box {
          position: absolute;
-         left:50%;
+         left:25%;
          top:20%;
-         transform: translateX(-50%);
+         /* transform: translateX(-50%); */
          
      }
  }
