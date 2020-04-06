@@ -12,8 +12,8 @@
  }
  #box {
      position: fixed;
-     left: 30%;
-     top: 15%;
+     left: 500px;
+     top: 10px;
  }
  @media(max-width:500px){
      #demo{

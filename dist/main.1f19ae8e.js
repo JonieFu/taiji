@@ -118,34 +118,36 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-var str = "/* \u4F60\u597D\n * Hello\n * How are you \n * \u4EE5\u4E0B\u662F\u4E2A\u592A\u6781 */\n#box {\n  border: 1px solid red;\n  width: 200px;\n  height: 200px;\n  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 50%, rgba(0, 0, 0, 1) 50%);\n  border-radius: 50%;\n  box-shadow: -2px -2px 5px 0px rgba(0,0,0,0.75);\n  border: none;\n}\n#box::before {\n  content: \"\";\n  display: block;\n  border: 1px solid red;\n  width: 50%;\n  height: 50%;\n  background-color: black;\n  position:absolute;\n  left:50%;\n  top:0;\n  transform:translateX(-50%);\n  border-radius: 50%;\n  border:none;\n  background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(0,0,0,1) 20%);\n}\n#box::after {\n  content: \"\";\n  display: block;\n  border: 1px solid red;\n  width: 50%;\n  height: 50%;\n  background-color:white;\n  position:absolute;\n  left:50%;\n  top:50%;\n  transform:translateX(-50%);\n  border-radius: 50%;\n  border:none;\n  background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(255,255,255,1) 20%);\n}\n ";
-var html = document.querySelector("#demo");
-var style = document.querySelector("#style");
-var n = 0;
-var str2 = '';
+window.addEventListener("load", function () {
+  var str = "/* \u4F60\u597D\n * Hello\n * How are you \n * \u4EE5\u4E0B\u662F\u4E2A\u592A\u6781 */\n#box {\n  border: 1px solid red;\n  width: 200px;\n  height: 200px;\n  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 50%, rgba(0, 0, 0, 1) 50%);\n  border-radius: 50%;\n  box-shadow: -2px -2px 5px 0px rgba(0,0,0,0.75);\n  border: none;\n}\n#box::before {\n  content: \"\";\n  display: block;\n  border: 1px solid red;\n  width: 50%;\n  height: 50%;\n  background-color: black;\n  position:absolute;\n  left:50%;\n  top:0;\n  transform:translateX(-50%);\n  border-radius: 50%;\n  border:none;\n  background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(0,0,0,1) 20%);\n}\n#box::after {\n  content: \"\";\n  display: block;\n  border: 1px solid red;\n  width: 50%;\n  height: 50%;\n  background-color:white;\n  position:absolute;\n  left:50%;\n  top:50%;\n  transform:translateX(-50%);\n  border-radius: 50%;\n  border:none;\n  background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(255,255,255,1) 20%);\n}\n ";
+  var html = document.querySelector("#demo");
+  var style = document.querySelector("#style");
+  var n = 0;
+  var str2 = '';
 
-function step() {
-  setTimeout(function () {
-    if (n < str.length) {
-      if (str[n] === "\n") {
-        str2 = str2 + '<br>';
-      } else if (str[n] === " ") {
-        str2 = str2 + "&nbsp;";
-      } else {
-        str2 = str2 + str[n];
+  function step() {
+    setTimeout(function () {
+      if (n < str.length) {
+        if (str[n] === "\n") {
+          str2 = str2 + '<br>';
+        } else if (str[n] === " ") {
+          str2 = str2 + "&nbsp;";
+        } else {
+          str2 = str2 + str[n];
+        }
+
+        html.innerHTML = str2;
+        html.scrollTo(0, 9999);
+        window.scrollTo(0, 9999);
+        style.innerHTML = str.slice(0, n);
+        n += 1;
+        step();
       }
+    }, 10);
+  }
 
-      html.innerHTML = str2;
-      html.scrollTo(0, 9999);
-      window.scrollTo(0, 9999);
-      style.innerHTML = str.slice(0, n);
-      n += 1;
-      step();
-    }
-  }, 10);
-}
-
-step();
+  step();
+});
 },{}],"../../../../AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

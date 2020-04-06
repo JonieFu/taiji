@@ -1,4 +1,5 @@
-let str = `/* 你好
+window.addEventListener("load", function () {
+    let str = `/* 你好
  * Hello
  * How are you 
  * 以下是个太极 */
@@ -42,29 +43,30 @@ let str = `/* 你好
   background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(255,255,255,1) 20%);
 }
  `
-let html = document.querySelector("#demo");
-let style = document.querySelector("#style");
-let n = 0
-let str2 = '';
-function step() {
-    setTimeout(function () {
-        if (n < str.length) {
-            if (str[n] === "\n") {
-                str2 = str2 + '<br>';
-            } else if (str[n] === " ") {
-                str2 = str2 + "&nbsp;";
-            } else {
-                str2 = str2 + str[n];
+    let html = document.querySelector("#demo");
+    let style = document.querySelector("#style");
+    let n = 0
+    let str2 = '';
+    function step() {
+        setTimeout(function () {
+            if (n < str.length) {
+                if (str[n] === "\n") {
+                    str2 = str2 + '<br>';
+                } else if (str[n] === " ") {
+                    str2 = str2 + "&nbsp;";
+                } else {
+                    str2 = str2 + str[n];
+                }
+                html.innerHTML = str2;
+                html.scrollTo(0, 9999);
+                window.scrollTo(0, 9999);
+                style.innerHTML = str.slice(0, n);
+                n += 1
+                step();
             }
-            html.innerHTML = str2;
-            html.scrollTo(0, 9999);
-            window.scrollTo(0, 9999);
-            style.innerHTML = str.slice(0, n);
-            n += 1
-            step();
-        }
 
-    }, 10)
+        }, 10)
 
-}
-step();
+    }
+    step();
+})
