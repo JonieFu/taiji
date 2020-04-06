@@ -1,8 +1,8 @@
 window.addEventListener("load", function () {
     let str = `/* 你好
- * Hello
- * How are you 
- * 以下是个太极 */
+ * 今天展示一下所学的JS和CS的功底
+ * 以下是个太极 
+ * 首先画一个圆，一半黑一半白 */
 #box {
   border: 1px solid red;
   width: 200px;
@@ -12,6 +12,7 @@ window.addEventListener("load", function () {
   box-shadow: -2px -2px 5px 0px rgba(0,0,0,0.75);
   border: none;
 }
+/* 画阴阳鱼,一黑一白 */
 #box::before {
   content: "";
   display: block;
@@ -25,7 +26,6 @@ window.addEventListener("load", function () {
   transform:translateX(-50%);
   border-radius: 50%;
   border:none;
-  background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(0,0,0,1) 20%);
 }
 #box::after {
   content: "";
@@ -40,8 +40,27 @@ window.addEventListener("load", function () {
   transform:translateX(-50%);
   border-radius: 50%;
   border:none;
+}
+/* 让八卦图转起来 */
+@keyframes bagua {
+     from{
+         transform: rotate(0deg);
+     }
+     to{
+         transform: rotate(360deg);
+     }
+ }
+ #box {
+     animation: bagua  5s linear infinite;
+ }
+
+#box::before {
+  background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(0,0,0,1) 20%);
+}
+#box::after{
   background: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(255,255,255,1) 20%);
 }
+ 
  `
     let html = document.querySelector("#demo");
     let style = document.querySelector("#style");
