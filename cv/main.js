@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
-    let str = `/* 大家好
- * 今天展示一下所学的JS和CSS的功底
+    let str = `/* 大家好，我是付玉
+ * 今天展示一下最近所学的前端功底
  * 以下是个太极
  * 首先设定动画 */
 @keyframes bagua {
